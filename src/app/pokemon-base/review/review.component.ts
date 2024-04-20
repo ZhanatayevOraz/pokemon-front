@@ -1,7 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Review } from '../../models/Review';
-import { ReviewFetchService } from '../services/reviewFetch.service';
+
 
 
 @Component({

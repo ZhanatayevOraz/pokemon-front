@@ -3,4 +3,5 @@ export interface Review{
     title : string;
     content : string;
     stars : number;
+    
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Pokemon } from '../../models/Pokemon';
 
 @Injectable({
@@ -9,9 +10,8 @@ export class PokemonFetchService {
   url='http://localhost:8080/api/pokemon';
 constructor(private http:HttpClient) { }
 
-  async getAllPokemon () : Promise<Pokemon[]>{
-    const data = await fetch(this.url);
-    return await data.json() ?? [];
+  getAllPokemon() : Observable<Pokemon[]>{
+    return this.http.get<Pokemon[]>(`${this.url}`);
   }
   getPokemon(id:number){
     return this.http.get<Pokemon>(`${this.url}/${id}`);

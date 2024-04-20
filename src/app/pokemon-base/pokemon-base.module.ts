@@ -6,6 +6,8 @@ import { PokemonTemplateComponent } from './pokemon-template/pokemon-template.co
 import {  HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ReviewComponent } from './review/review.component';
+import { ReviewCreateComponent } from './review-create/review-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes : Routes = [
@@ -14,6 +16,7 @@ const routes : Routes = [
     children : [
       {path : '' , component:PokemonListComponent},
       {path : ':id' , component: PokemonTemplateComponent},
+      {path : ':id/review', component : ReviewCreateComponent}
       
     ]
   }
@@ -24,18 +27,22 @@ const routes : Routes = [
     PokemonListComponent,
     PokemonDetailComponent,
     PokemonTemplateComponent,
-    ReviewComponent
+    ReviewComponent,
+    ReviewCreateComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     PokemonListComponent,
     PokemonDetailComponent,
     PokemonTemplateComponent,
-    ReviewComponent
+    ReviewComponent,
+    ReviewCreateComponent
   ]
 })
 export class PokemonBaseModule { }

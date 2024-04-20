@@ -9,12 +9,13 @@ import { PokemonFetchService } from '../services/pokemon-fetch.service';
 })
 export class PokemonListComponent {
   allPokemonList : Pokemon[] = [];
-  pokemonFetch : PokemonFetchService = inject(PokemonFetchService);
 
-  constructor(){
-    this.pokemonFetch.getAllPokemon().then((allPokemonList: Pokemon[])=>{
+
+  constructor( private pokemonFetch : PokemonFetchService){
+    this.pokemonFetch.getAllPokemon().subscribe((allPokemonList: Pokemon[])=>{
       this.allPokemonList =allPokemonList;
     });
+    
   }
 
 }

@@ -2,8 +2,17 @@
   <div class="card-body">
     <h5 class="card-title">{{pokemon.name}}</h5>
     <p class="card-text">{{pokemon.type}}</p>
-    <button [routerLink]="['/pokemon', pokemon.id]" >Details</button>
     <button type="button" (click)="goBack()" >Back</button>
   </div>
 </div>
-<app-review *ngFor="let review of allReviewList" [review]="review"></app-review>
+<ng-container *ngIf="allReviewList.length; then reviewList; else reviewListNotFound">
+</ng-container>
+
+<ng-template #reviewList> 
+  <app-review *ngFor="let review of allReviewList" [review]="review"></app-review>
+</ng-template>
+
+<ng-template #reviewListNotFound> 
+  <p>Pokemon doesn't have a review</p>
+</ng-template>
+<button [routerLink]="['/pokemon', pokemon.id ,'review']" >Add new review</button>

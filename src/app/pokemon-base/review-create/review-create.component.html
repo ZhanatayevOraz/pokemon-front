@@ -1,0 +1,17 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Email address</label>
+    <input type="text" class="form-control" formControlName="title" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Password</label>
+    <input type="text" class="form-control" formControlName="content">
+  </div>
+  <div class="mb-3">
+    <label for="stars" class="form-label">Password</label>
+    <input type="number" class="form-control" formControlName="stars">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<button type="button" (click)="goBack()" >Back</button>
