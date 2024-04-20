@@ -5,6 +5,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { PokemonTemplateComponent } from './pokemon-template/pokemon-template.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { ReviewComponent } from './review/review.component';
 
 
 const routes : Routes = [
@@ -22,7 +23,8 @@ const routes : Routes = [
   declarations: [
     PokemonListComponent,
     PokemonDetailComponent,
-    PokemonTemplateComponent
+    PokemonTemplateComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ const routes : Routes = [
   exports:[
     PokemonListComponent,
     PokemonDetailComponent,
-    PokemonTemplateComponent
+    PokemonTemplateComponent,
+    ReviewComponent
   ]
 })
 export class PokemonBaseModule { }

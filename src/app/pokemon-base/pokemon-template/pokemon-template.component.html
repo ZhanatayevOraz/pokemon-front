@@ -1,4 +1,9 @@
-<p>
-  pokemon-template works!
-</p>
-{{pokemon | json }}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.name}}</h5>
+    <p class="card-text">{{pokemon.type}}</p>
+    <button [routerLink]="['/pokemon', pokemon.id]" >Details</button>
+    <button type="button" (click)="goBack()" >Back</button>
+  </div>
+</div>
+<app-review *ngFor="let review of allReviewList" [review]="review"></app-review>

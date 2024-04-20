@@ -16,7 +16,5 @@ export class PokemonListComponent {
       this.allPokemonList =allPokemonList;
     });
   }
-  onSave(){
-    console.log(this.allPokemonList);
-  }
+
 }
