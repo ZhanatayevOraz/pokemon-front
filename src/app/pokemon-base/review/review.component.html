@@ -4,6 +4,7 @@
       <div class="fw-bold">{{review.title}}</div>
       {{review.content}}
     </div>
+    <button  (click)="delete(review.id)">Delete</button>
     <span class="badge text-bg-primary rounded-pill">{{review.stars}}</span>
   </li>
 </ol>
